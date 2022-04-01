@@ -19,4 +19,9 @@ class Bank
     @total
   end
 
+  def get_date
+    date = Date.today
+    date.strftime("%Y-%m-%d") 
+  end 
+
 end 

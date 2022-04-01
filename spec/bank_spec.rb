@@ -20,5 +20,11 @@ describe Bank do
     end 
   end 
 
+  describe '#get_date' do 
+    it 'should show the user the date' do 
+      expect(bank.get_date).to eq '2022-04-01'
+    end 
+  end 
+
 
 end
