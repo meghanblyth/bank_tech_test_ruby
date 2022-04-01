@@ -24,4 +24,8 @@ class Bank
     date.strftime("%Y-%m-%d") 
   end 
 
+  def print_statement
+    "Date || Credit || Debit || Balance"
+  end 
+
 end 

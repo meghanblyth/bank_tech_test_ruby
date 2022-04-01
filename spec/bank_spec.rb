@@ -26,5 +26,11 @@ describe Bank do
     end 
   end 
 
+  describe '#print_statement' do 
+    it 'should print a statement' do 
+      expect(bank.print_statement).to eq "Date || Credit || Debit || Balance"
+    end 
+  end 
+
 
 end
