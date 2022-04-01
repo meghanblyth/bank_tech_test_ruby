@@ -61,4 +61,4 @@ ruby bank.rb
 
 # => bank.statement
 
-```
+```![Screenshot 2022-04-01 at 19 34 08](https://user-images.githubusercontent.com/79933323/161322136-7f941b08-ce9d-4a5c-8e32-d2fc894c0a1a.png)
