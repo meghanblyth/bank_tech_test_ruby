@@ -11,12 +11,12 @@ class Bank
 
   def deposit(amount)
     @total += amount
-    @total
+    @history.push({ transaction: 'deposit', amount: '%.2f' % amount, date: self.get_date, balance: '%.2f' % @total })
   end
 
   def withdraw(amount)
     @total -= amount
-    @total
+    @history.push({ transaction: 'withdraw', amount: '%.2f' % amount, date: self.get_date, balance: '%.2f' % @total })
   end
 
   def get_date
@@ -25,7 +25,14 @@ class Bank
   end 
 
   def print_statement
-    "Date || Credit || Debit || Balance"
+    puts "Date || Credit || Debit || Balance"
+    @history.each do |history| 
+      if history[:transaction] == 'deposit'
+        puts "#{history[:date]} || #{history[:amount]} ||  || #{history[:balance]}"
+      else 
+        puts "#{history[:date]} || ||  #{history[:amount]} || #{history[:balance]}"
+      end 
+    end 
   end 
 
 end 

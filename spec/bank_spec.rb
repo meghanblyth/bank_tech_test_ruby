@@ -28,7 +28,10 @@ describe Bank do
 
   describe '#print_statement' do 
     it 'should print a statement' do 
-      expect(bank.print_statement).to eq "Date || Credit || Debit || Balance"
+      bank.deposit(2000)
+      bank.withdraw(1000)
+      expect(bank.print_statement).to eq [ {:amount=>'2000.00', :balance=>'2000.00', :date=>"2022-04-01", :transaction=>"deposit"},
+        {:amount=>'1000.00', :balance=>'1000.00', :date=>"2022-04-01", :transaction=>"withdraw"} ]
     end 
   end 
 
