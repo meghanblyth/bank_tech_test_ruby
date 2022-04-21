@@ -1,4 +1,5 @@
 require 'date'
+require_relative "./statement.rb"
 
 class Bank
   attr_accessor :total, :amount, :history
@@ -24,15 +25,9 @@ class Bank
     date.strftime("%Y-%m-%d") 
   end 
 
-  def print_statement
-    puts "Date || Credit || Debit || Balance"
-    @history.each do |history| 
-      if history[:transaction] == 'deposit'
-        puts "#{history[:date]} || #{history[:amount]} ||  || #{history[:balance]}"
-      else 
-        puts "#{history[:date]} || ||  #{history[:amount]} || #{history[:balance]}"
-      end 
-    end 
+  def account_statement
+    statement = Statement.new(@history)
+    statement.print_statement
   end 
 
 end 

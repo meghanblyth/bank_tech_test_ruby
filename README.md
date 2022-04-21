@@ -59,6 +59,6 @@ ruby bank.rb
 
 # => bank.withdraw(50)
 
-# => bank.statement
+# => bank.account_statement
 
 ```

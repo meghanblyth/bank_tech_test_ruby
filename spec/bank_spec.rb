@@ -22,7 +22,7 @@ describe Bank do
 
   describe '#get_date' do 
     it 'should show the user the date' do 
-      expect(bank.get_date).to eq '2022-04-01'
+      expect(bank.get_date).to eq '2022-04-21'
     end 
   end 
 
@@ -30,10 +30,8 @@ describe Bank do
     it 'should print a statement' do 
       bank.deposit(2000)
       bank.withdraw(1000)
-      expect(bank.print_statement).to eq [ {:amount=>'2000.00', :balance=>'2000.00', :date=>"2022-04-01", :transaction=>"deposit"},
-        {:amount=>'1000.00', :balance=>'1000.00', :date=>"2022-04-01", :transaction=>"withdraw"} ]
+      expect(bank.print_statement).to eq [ {:amount=>'2000.00', :balance=>'2000.00', :date=>"2022-04-21", :transaction=>"deposit"},
+        {:amount=>'1000.00', :balance=>'1000.00', :date=>"2022-04-21", :transaction=>"withdraw"} ]
     end 
   end 
-
-
 end
